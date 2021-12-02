@@ -8,6 +8,7 @@ powershell -Command "Invoke-WebRequest https://damianbosspl.github.io/cmdProtoco
 powershell -command "Expand-Archive -Force '%~dp0\updateFiles.zip' '%~dp0\files'"
 del /f "%~dp0\..\config.properties"
 del /f "%~dp0\..\README.md"
+del /f "%~dp0\..\run.bat"
 rmdir /S /Q "%~dp0\..\src"
 rmdir /S /Q "%~dp0\..\batch"
 
@@ -15,6 +16,7 @@ xcopy "%~dp0\files\src" "%~dp0\..\src" /E /H /C /I
 xcopy "%~dp0\files\batch" "%~dp0\..\batch" /E /H /C /I
 copy "%~dp0\files\README.md" "%~dp0\..\"
 copy "%~dp0\files\config.properties" "%~dp0\..\"
+copy "%~dp0\files\run.bat" "%~dp0\..\"
 
 del /f "%~dp0\updateFiles.zip"
 rmdir /S /Q "%~dp0\files" 
