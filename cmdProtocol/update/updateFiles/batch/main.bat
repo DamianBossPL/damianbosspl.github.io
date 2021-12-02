@@ -15,7 +15,7 @@ goto :checkversion
 cls
 title Checking for updates...
 echo Checking for updates . . .
-powershell -Command "Invoke-WebRequest https://damianbosspl.github.io/cmdProtocol/latestVersion.txt -Outfile %~dp0\..\update\updatecheck\isUpdat.bat"
+powershell -Command "Invoke-WebRequest https://damianbosspl.github.io/cmdProtocol/latestVersion.txt -Outfile '%~dp0\..\update\updatecheck\isUpdat.bat'"
 call "%~dp0\..\update\updatecheck\isUpdat.bat"
 
 IF NOT EXIST "%~dp0\..\update\updatecheck\isUpdat.bat" (echo Failed to get new version number. You must both have powershell and be connected to the internet. && PAUSE && goto :main)
@@ -38,9 +38,9 @@ goto :update
 
 title Wait...
 
-powershell -Command "Invoke-WebRequest https://damianbosspl.github.io/cmdProtocol/install.bat -Outfile %~dp0\..\update\update.bat"
+powershell -Command "Invoke-WebRequest https://damianbosspl.github.io/cmdProtocol/update/update.bat -Outfile '%~dp0\..\update\update.bat'"
 
-%~dp0\..\update\update.bat
+"%~dp0\..\update\update.bat"
 
 PAUSE
 goto :main
