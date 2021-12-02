@@ -12,6 +12,9 @@ try:
 except:
     arg="cmd://cmd.exe"
 
+if arg=="cmd:///":
+    arg="cmd://cmd.exe/"
+
 print("Argument passed into the app:\n" + arg)
 
 # URL Formatting
@@ -38,6 +41,7 @@ print("\nConverted argument:\n" + arg)
 
 user=input("\nAre you sure you want to run this command? [y/n] ")
 if user=="y":
+    os.system('cls')
     os.system('cmd /c ' + arg)
     input("\nCommand has successfully been executed")
 else:
