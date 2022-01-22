@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirector</title>
+    <script>
+        function redirect(){
+            const text = document.getElementById('url').value.toString()
+            console.log(`Redirecting to ${text}`)
+            window.location.href = text
+        }
+    </script>
+</head>
+<body>
+    <input id="url" type="text">
+    <button onclick="redirect()">Redirect</button>
+</body>
+</html>
